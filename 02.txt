@@ -1,0 +1,41 @@
+/* 
+ * Enter your code here. Read input from STDIN. Print your output to STDOUT. 
+ * Your class should be named CandidateCode.
+*/
+
+import java.io.*;
+import java.util.*;
+public class CandidateCode {
+    public static boolean test(String V, String B){
+        char[] arr = V.toCharArray();
+        char[] arr1 = B.toCharArray();
+
+        int m = arr1.length;
+        int n = arr.length;
+        int j = 0;
+        int i = 0;
+
+        while(j < m && i < n){
+        if (arr1[j] == arr[i])
+            j = j+1;
+        i = i + 1;
+        }
+
+        return j == m;
+    }
+
+
+    public static void main(String args[] ) throws Exception {
+        Scanner sc = new Scanner( System.in );
+        String V = sc.nextLine();
+        String number = sc.nextLine();
+        int N = Integer.parseInt(number);
+        for(int i =0; i< N; i++){
+            String B = sc.nextLine();
+            if (test(V, B))
+            System.out.println("POSITIVE"); 
+            else
+            System.out.println( "NEGATIVE");
+        }
+   }
+}
